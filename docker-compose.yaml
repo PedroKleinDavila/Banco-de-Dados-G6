@@ -1,0 +1,10 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: banco_de_dados
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: banco_de_dados
+    ports:
+      - "5432:5432"
