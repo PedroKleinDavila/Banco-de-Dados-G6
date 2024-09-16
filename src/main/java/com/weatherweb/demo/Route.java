@@ -18,13 +18,25 @@ public class Route {
         return this.userRepository.findAll();
         //return "Hello World";
     }
+    @GetMapping("User/{id}")
+    public User getUser(@PathVariable() long id){
+        return this.userRepository.findById(id);
+    }
     @PostMapping("")
     public User addUser(@RequestBody User user){
         return this.userRepository.save(user);
     }
+
     @DeleteMapping("")
     public void deleteUser(@RequestBody User user){
         this.userRepository.delete(user);
     }
-
+    @PutMapping("")
+    public User updateUser(@RequestBody User user){
+        return this.userRepository.save(user);
+    }
+    @DeleteMapping("DeleteAll")
+    public void deleteAllUsers() {
+        this.userRepository.deleteAll();
+    }
 }
