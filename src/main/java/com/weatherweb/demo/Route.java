@@ -16,7 +16,6 @@ public class Route {
     @GetMapping("")
     public List<User> getAllUsers(){
         return this.userRepository.findAll();
-        //return "Hello World";
     }
     @GetMapping("User/{id}")
     public User getUser(@PathVariable() long id){

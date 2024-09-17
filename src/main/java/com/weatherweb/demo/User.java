@@ -2,6 +2,8 @@ package com.weatherweb.demo;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "users")
 public class User {
@@ -11,6 +13,16 @@ public class User {
     @Column(unique = true, nullable = false)
     private String login;
     private String password;
+    @OneToMany(mappedBy = "user")
+    private List<Favorite> favorites;
+
+    public List<Favorite> getFavorites() {
+        return favorites;
+    }
+
+    public void setFavorites(List<Favorite> favorites) {
+        this.favorites = favorites;
+    }
 
     public int getId() {
         return id;
@@ -36,8 +48,4 @@ public class User {
         this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return "Login:"+login+", Password:"+password+", ID:"+id+"\n";
-    }
 }
