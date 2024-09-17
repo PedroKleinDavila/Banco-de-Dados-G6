@@ -1,4 +1,4 @@
-package com.weatherweb.demo;
+package com.weatherweb.demo.User;
 
 import org.springframework.web.bind.annotation.*;
 

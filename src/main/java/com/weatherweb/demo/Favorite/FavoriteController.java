@@ -1,5 +1,7 @@
-package com.weatherweb.demo;
+package com.weatherweb.demo.Favorite;
 
+import com.weatherweb.demo.User.User;
+import com.weatherweb.demo.User.UserRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,11 +33,11 @@ public class FavoriteController {
     public void deleteFavorite(@RequestBody Favorite favorite) {
         this.favoriteRepository.delete(favorite);
     }
-    @PutMapping
+    @PutMapping("")
     public Favorite updateFavorite(@RequestBody Favorite favorite) {
         return this.favoriteRepository.save(favorite);
     }
-    @PostMapping
+    @PostMapping("")
     public Favorite addFavorite(@RequestBody FavoriteDTO favorite) {
         User user = this.userRepository.findById(favorite.getId());
         Favorite favorite1=new Favorite();

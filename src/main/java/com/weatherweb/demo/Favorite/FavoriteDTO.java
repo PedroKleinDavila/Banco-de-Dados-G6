@@ -1,4 +1,4 @@
-package com.weatherweb.demo;
+package com.weatherweb.demo.Favorite;
 
 public class FavoriteDTO {
     private long id;

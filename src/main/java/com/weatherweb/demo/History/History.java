@@ -1,9 +1,16 @@
-package com.weatherweb.demo;
+package com.weatherweb.demo.History;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.weatherweb.demo.User.User;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "histories")
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id"
+)
 public class History {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -12,7 +19,7 @@ public class History {
     private String time;
     private int temperature;
     private int humidity;
-    private String wind;
+    private double wind;
     private String weather;
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -58,11 +65,11 @@ public class History {
         this.humidity = humidity;
     }
 
-    public String getWind() {
+    public double getWind() {
         return wind;
     }
 
-    public void setWind(String wind) {
+    public void setWind(double wind) {
         this.wind = wind;
     }
 

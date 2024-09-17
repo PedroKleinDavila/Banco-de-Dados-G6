@@ -1,4 +1,4 @@
-package com.weatherweb.demo;
+package com.weatherweb.demo.History;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

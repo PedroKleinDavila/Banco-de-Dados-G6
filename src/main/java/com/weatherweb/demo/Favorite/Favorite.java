@@ -1,9 +1,16 @@
-package com.weatherweb.demo;
+package com.weatherweb.demo.Favorite;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.weatherweb.demo.User.User;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "favorites")
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id"
+)
 public class Favorite {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
