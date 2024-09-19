@@ -44,9 +44,10 @@ public class HistoryController {
         history1.setDay(history.getDay());
         history1.setHumidity(history.getHumidity());
         history1.setTemperature(history.getTemperature());
-        history1.setTime(history.getTime());
         history1.setWeather(history.getWeather());
         history1.setWind(history.getWind());
+        history1.setCity(history.getCity());
+        history1.setHour(history.getHour());
         return this.historyRepository.save(history1);
     }
 }

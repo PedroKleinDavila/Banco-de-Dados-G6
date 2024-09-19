@@ -2,12 +2,13 @@ package com.weatherweb.demo.History;
 
 public class HistoryDTO {
     long id;
+    private String city;
     private String day;
-    private String time;
     private int temperature;
     private int humidity;
     private double wind;
     private String weather;
+    private int hour;
 
     public long getId() {
         return id;
@@ -17,20 +18,20 @@ public class HistoryDTO {
         this.id = id;
     }
 
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
     public String getDay() {
         return day;
     }
 
     public void setDay(String day) {
         this.day = day;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
     }
 
     public int getTemperature() {
@@ -63,5 +64,13 @@ public class HistoryDTO {
 
     public void setWeather(String weather) {
         this.weather = weather;
+    }
+
+    public int getHour() {
+        return hour;
+    }
+
+    public void setHour(int hour) {
+        this.hour = hour;
     }
 }
